@@ -1,0 +1,104 @@
+import java.util.Scanner;
+public class twjorgensen_LeetLoop
+{
+    public static void main ( String args[] )
+    {
+        Scanner input = new Scanner( System.in );
+        int howmany;
+        int counter;
+        int total;
+        total = 0;
+        counter = 1;
+
+
+        System.out.printf( "How many characters would you like to convert? " );
+        howmany = input.nextInt();
+        while ( counter <= 5 ) {
+            System.out.printf( "Please enter character #%d to convert: ",counter );
+            total += howmany;
+            counter = counter + 1;
+            char ch;
+            ch = input.next().charAt(0);
+            switch( ch ){
+                case 'A' : case 'a':
+                    System.out.printf( "%c @\n", ch);
+                    break;
+                case 'B' : case 'b':
+                    System.out.printf( "%c I3\n", ch);
+                    break;
+                case 'C' : case 'c':
+                    System.out.printf( "%c <\n", ch);
+                    break;
+                case 'D' : case 'd':
+                    System.out.printf( "%c [)\n", ch);
+                    break;
+                case 'E' : case 'e':
+                    System.out.printf( "%c &\n", ch);
+                    break;
+                case 'F' : case 'f':
+                    System.out.printf( "%c ]=\n", ch);
+                    break;
+                case 'G' : case 'g':
+                    System.out.printf( "%c 6\n", ch);
+                    break;
+                case 'H' : case 'h':
+                    System.out.printf( "%c ]-\n", ch);
+                    break;
+                case 'I' : case 'i':
+                    System.out.printf( "%c 1\n", ch);
+                    break;
+                case 'J' : case 'j':
+                    System.out.printf( "%c _//\n", ch);
+                    break;
+                case  'K' : case 'k':
+                    System.out.printf( "%c X\n", ch);
+                    break;
+                case 'L' : case 'l':
+                    System.out.printf( "%c 7\n", ch);
+                    break;
+                case 'M' : case 'm':
+                    System.out.printf( "%c /\\/\\\n", ch);
+                    break;
+                case 'N' : case 'n':
+                    System.out.printf( "%c |\\|\n", ch);
+                    break;
+                case 'O' : case 'o':
+                    System.out.printf( "%c ()\n", ch);
+                    break;
+                case 'P' : case 'p':
+                    System.out.printf( "%c |*\n", ch);
+                    break;
+                case 'Q' : case 'q':
+                    System.out.printf( "%c 0,\n", ch);
+                    break;
+                case 'R' : case 'r':
+                    System.out.printf( "%c I2\n", ch);
+                    break;
+                case 'S' : case 's':
+                    System.out.printf( "%c $\n", ch);
+                    break;
+                case 'T' : case 't':
+                    System.out.printf( "%c +\n", ch);
+                    break;
+                case 'U' : case 'u':
+                    System.out.printf( "%c (_)\n", ch);
+                    break;
+                case 'V' : case 'v':
+                    System.out.printf( "%c \\/\n", ch);
+                    break;
+                case 'W' : case 'w':
+                    System.out.printf( "%c vv\n", ch);
+                    break;
+                case 'X' : case 'x':
+                    System.out.printf( "%c ><\n", ch);
+                    break;
+                case  'Y' : case 'y':
+                    System.out.printf( "%c j\n", ch);
+                    break;
+                case 'Z' : case 'z':
+                    System.out.printf( "%c 2\n", ch);
+                    break;
+            }
+        }
+    }
+}
