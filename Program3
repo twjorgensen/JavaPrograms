@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class twjorgensen_Multiple
+{
+    public static void main ( String args[] )
+    {
+        Scanner input = new Scanner ( System.in);
+        int x;
+        System.out.printf("Please enter a non-negative (>= 0) integer (whole) number: ");
+        x = input.nextInt();
+        System.out.printf("%d:", x);
+        if ( x % 11 == 0) // check to see if x is multiple of 11
+            System.out.printf("MULTIPLE:");
+        else
+            System.out.printf("NOT:");
+        if ( x % 2 == 0) // check to see if number is even
+            System.out.println("EVEN");
+        else
+            System.out.println("ODD");
+    }
+}
