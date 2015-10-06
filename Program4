@@ -1,0 +1,42 @@
+import java.util.Scanner;
+public class twjorgensen_SmallestLargest
+{
+    public static void main ( String args[])
+    {
+        int value, smallest, largest;
+        Scanner get = new Scanner ( System.in );
+        System.out.print( "Please enter first integer: ");
+        value = get.nextInt();
+        largest = value;
+        smallest = value;
+
+        System.out.print( "Please enter second integer: ");
+        value = get.nextInt();
+        if ( value > largest )
+            largest = value;
+        if ( value < smallest )
+            smallest = value;
+
+        System.out.print( "please enter third integer: ");
+        value = get.nextInt();
+        if ( value > largest )
+            largest = value;
+        if ( value < smallest )
+            smallest = value;
+
+        System.out.print( "Please enter fouth number: ");
+        value = get.nextInt();
+        if ( value > largest )
+            largest = value;
+        if ( value < smallest )
+            smallest = value;
+
+        System.out.print( "Please enter fifth number: ");
+        value = get.nextInt();
+        if ( value > largest)
+            largest = value;
+        if ( value < smallest )
+            smallest = value;
+        System.out.printf ("%d:%d\n", smallest, largest);
+    }
+}
