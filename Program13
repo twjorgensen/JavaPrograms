@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class twjorgensen_Fibonacci
+{
+    public static void main ( String args[])
+    {
+        Scanner in = new Scanner ( System.in );
+
+        System.out.print("Which Fibonacci number would you like? ");
+        int num = in.nextInt();
+        if ( num > 70 || num < 0 )
+        {
+            System.out.print("Which Fibonacci number would you like? ");
+            num = in.nextInt();
+        }
+        System.out.printf("Fibonacci #%d is %.0f\n", num, fibcalc(num));
+
+    }
+
+    public static double fibcalc(int num)
+    {
+        double fib1 = 0;
+        double fib2 = 1;
+        double answer = 0;
+        if (num == 0 )
+        {
+            answer = 0;
+        }
+        else if (num == 1)
+        {
+            answer = 1;
+        }
+        else
+        {
+            for ( int counter = 1; counter < num; counter++)
+            {
+                answer = fib1 + fib2;
+                fib1 = fib2;
+                fib2 = answer;
+            }
+        }
+        return answer;
+    }
+}
