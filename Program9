@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class twjorgensen_Shipping{
+    public static void main ( String Args[] ){
+        int weight;
+        int distance;
+        int weightCounter;
+        double total;
+        double rate;
+        total = 0;
+        rate = 0;
+        weightCounter = 1;
+        Scanner get = new Scanner ( System.in );
+        System.out.printf( "How heavy is your package in pounds (1-60)? " );
+        weight = get.nextInt();
+        while ( weight < 1 || weight > 60 ) {
+            System.out.printf( "How heavy is your package in pounds (1-60)? ");
+            weight = get.nextInt();
+        }
+        System.out.printf( "How far will you be shipping the package in miles? ");
+        distance = get.nextInt();
+        while ( distance < 1 ){
+            System.out.printf( "How far will you be shipping the package in miles? ");
+            distance = get.nextInt();
+        }
+
+        if ( distance >= 1 || distance <= 10)
+            rate = 5.01;
+        if ( distance >= 11 || distance <= 20)
+            rate = 7.02;
+        if ( distance >= 21 || distance <= 30)
+            rate = 9.03;
+        if ( distance >= 31 || distance <= 40)
+            rate = 11.04;
+        if ( distance >= 41 || distance <= 60)
+            rate = 15;
+        total = rate * (distance/100);
+        if ( distance % 100 != 0 )
+        {
+            total += rate;
+        }
+        System.out.printf( "Your total shipping cost for %d miles is %f\n", distance, total);
+    }
+}
