@@ -1,0 +1,109 @@
+import java.util.Scanner;
+
+public class twjorgensen_numerology{
+    public static void main ( String args[]){
+        Scanner input = new Scanner ( System.in);
+        int month = 0;
+        int day = 0;
+        int year = 0;
+        int crunch = 0;
+        boolean value = true;
+        while ( value == true )
+        {
+            System.out.printf( "Enter the birth date (mm/dd/yyyy): ");
+            month = input.nextInt(); // month
+            char first = input.next().charAt(0); // first forward slash
+            day = input.nextInt(); // day
+            char second = input.next().charAt(0); // second forward slash
+            year = input.nextInt(); // year
+
+            if ( month < 1 || month > 12 ) // check month
+            {
+                System.out.printf("Bad Month:%d\n", month);
+                value = false;
+            } else
+
+                if ( first != '/' || second != '/') // Checks for slashes
+                {
+                    System.out.print("Use forward slashes between mm/dd/yyyy!\n" );
+                    value = false;
+                } else // check year
+                    if ( year < 1880 || year > 2280 )
+                    {
+                        System.out.printf("Bad year for %d\n", year);
+                        value = false;
+                    } else if ( month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 )// Checks months with 31 days
+                    {
+                        if ( day < 1 || day > 31 )
+                            System.out.printf("Bad day for %d/%d : %d", month, year, day);
+                            value = false;
+                    } else if ( month == 4 || month == 6 || month ==  9 || month == 11 ) // Checks months with 30 days
+                    {
+                        if ( day < 1 || day > 30 )
+                        {
+                            System.out.printf("Bad day for %d/%d : %d", month, year, day);
+                            value = false;
+                        }
+                    } else if ( month == 2) //check leap year month
+                    {
+                        if ( year % 4 == 0 || year % 400 == 0 || year == 2000)
+                        {
+                            if (day < 1 || day > 29 )
+                            {
+                                System.out.printf( "Bad day for %d/%d : %d\n", month, year, day);
+                            }
+                            value = false;
+                        }
+                        if (year % 100 == 0 || year % 4 != 0 || year % 400 != 0 || year != 2000)
+                        {
+                            if (day < 1 || day > 28)
+                            {
+                                System.out.printf("Bad day for %d/%d : %d\n", month, year, day);
+                                value = false;
+                                break;
+                            }
+
+                        }
+
+                    }
+        }
+
+            System.out.printf("Welcome to the numerology report for %d/%d/%d:\n",month, day, year);
+            crunch = month + day + year;
+            do{
+                crunch = ((crunch % 10) + (crunch / 10)); // determines if the number crunched down is <10 and runs the switch statement.
+            } while (crunch >= 10);
+
+            switch (crunch) {
+                case 1:
+                    System.out.println("=1= Do not say a little in many words but a great deal in few. -Pythagoras");
+                    break;
+                case 2:
+                    System.out.println("=2= Rest satisfied with doing well, and leave other to talk of you as they will. -Pythagoras");
+                    break;
+                case 3:
+                    System.out.println("=3= A thought is an idea in transit. -Pytahgoras");
+                    break;
+                case 4:
+                    System.out.println("=4= Hardship often prepares an ordinary person for an extraordinary destiny. -C.S. Lewis");
+                    break;
+                case 5:
+                    System.out.println("=5= Every man is a creature of the age in which he lives and few are able to raise themselves above the ideas of the time. -Voltaire");
+                    break;
+                case 6:
+                    System.out.println("=6= Dream as if you'll live forever. Live as if you'll die today. -James Dean");
+                    break;
+                case 7:
+                    System.out.println("=7= Only the gentle are ever really strong. -James Dean");
+                    break;
+                case 8:
+                    System.out.println("=8= The gratification comes in the doing, not in the results. -James Dean");
+                    break;
+                case 9:
+                    System.out.println("=9= The only greatness for man is immortality. -James Dean");
+                    break;
+            }
+        }
+    }
+
+                                                             
