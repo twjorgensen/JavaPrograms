@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class twjorgensen_BasicMath
+{
+    public static void main ( String args[] )
+    {
+        Scanner input = new Scanner ( System.in);
+        int num1;
+        int num2;
+        int num3;
+
+        System.out.print ( "Please enter your first number: ");
+        num1 = input.nextInt();
+
+        System.out.print ( "Please enter your second number: ");
+        num2 = input.nextInt();
+
+        System.out.print ( "Please enter your third number: ");
+        num3 = input.nextInt();
+
+        System.out.printf( "ADD: %d\n", num1 + num2 + num3 );
+        System.out.printf( "PRO: %d\n", num1 * num2 * num3 );
+        System.out.printf( "DIV: %d\n", num1 / num2 );
+        System.out.printf( "MOD: %d\n", num1 % num3 );
+        System.out.printf( "DIF: %d\n", num3 - num2 );
+    }
+}
