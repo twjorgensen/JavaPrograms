@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class twjorgensen_Mathstuff
+{
+    public static void main ( String args[])
+    {
+        Scanner input = new Scanner ( System.in);
+
+        System.out.printf("Please enter the length of a side of your square: ");
+        double square = input.nextDouble();
+
+        System.out.printf("Area of your square is : %.3f\n", Math.pow(square, 2));
+
+        System.out.printf("Please enter the length of a side of your cube: ");
+        double cube = input.nextDouble();
+
+        System.out.printf("Volume of your cube is : %.3f\n", Math.pow(cube, 3));
+
+        System.out.printf("Please enter the radius of your circle: ");
+        double circle = input.nextDouble();
+
+        System.out.printf("Area of your circle is : %.3f\n", Math.PI * (Math.pow(circle, 2)));
+
+        System.out.printf("Please enter the length of the side of your cube: ");
+        double cube2 = input.nextDouble();
+
+        System.out.printf("Surface area of your cube is : %.3f\n", 6 * Math.pow(cube2, 2));
+
+        System.out.printf("Please enter two numbers seperated by spaces: ");
+        double Largerone = input.nextDouble();
+        double Largertwo = input.nextDouble();
+
+        System.out.printf("Larger of first two numbers is : %.3f\n", Math.max(Largerone, Largertwo));
+
+        System.out.printf("Please enter two number seperated by spaces: ");
+        double Smallerone = input.nextDouble();
+        double Smallertwo = input.nextDouble();
+
+        System.out.printf("Smaller of first two number is : %.3f\n", Math.min(Smallerone, Smallertwo));
+
+
+
+    }
+}
