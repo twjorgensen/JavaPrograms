@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class labExercise7
+{
+    public static void main ( String[] args )
+    {
+        int x;
+        int y;
+        double a;
+        double b;
+
+        Scanner in = new Scanner (System.in);
+
+        System.out.print("Please enter two integers to use in our math function: ");
+        x = in.nextInt();
+        y = in.nextInt();
+
+        //Arguments need to be filled in here
+        System.out.printf("The answer after putting %d and %d into our integer math function is %d\n", x, y, mathFunction() );
+
+        System.out.print("Please enter two doubles to use in our math function: ");
+        a = in.nextDouble();
+        b = in.nextDouble();
+
+        //Arguments need to be filled in here
+        System.out.printf("The answer after putting %.2f and %.2f into our double math function is %.2f\n", a, b, mathFunction() );
+
+
+    }
+
+    public static int mathFunction () //Parameters need to be filled in here
+    {
+        int answer = 3 * num1 + 2 * ( num2 * num2 );
+
+        return answer;
+    }
+
+    public static double mathFunction () //Parameters need to be filled in here
+    {
+        double answer = 4 * (n1 * n1) + 6 * n2;
+
+        return answer;
+  }
+}
