@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class labExercise2
+{
+    public static void main ( String[] args )
+    {
+        Scanner in = new Scanner (System.in);
+        int num;
+        System.out.println ("Our formula is y = x^3 + 19x + 2");
+        System.out.print("Please enter a number for x: ");
+        num = in.nextInt();
+        int answer = num * num * (num + 19) * num + 2;
+        System.out.printf ("y = %d\n", answer);
+    }
+}
