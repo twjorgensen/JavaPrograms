@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class labExercise3
+{
+    public static void main( String args[] )
+    {
+        int a;
+        int b;
+        int c;
+
+        Scanner in = new Scanner( System.in );
+
+        System.out.print( "Enter a number: " );
+        a = in.nextInt();
+
+        System.out.print( "Enter a second number: " );
+        b = in.nextInt();
+
+        System.out.print( "Enter a third number: " );
+        c = in.nextInt();
+
+        System.out.println();
+
+        /* Here, use three if statments to see if each pair of two
+         * numbers add up to the third number, i.e. a + b = c or
+         * a + c = b or b + c = a. If any of these cases are true
+         * then print out the result as seen in the sample output
+         */
+        if ( a + b == c)
+            System.out.printf("%d + %d = %d\n", a, b, c);
+        if ( a + c == b )
+            System.out.printf("%d + %d = %d\n", a, c, b);
+        if ( b + c == a )
+            System.out.printf("%d + %d = %d\n", b, c, a);
+
+    }
+}
