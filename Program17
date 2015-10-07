@@ -1,0 +1,150 @@
+import java.util.Scanner;
+
+public class twjorgensen_Magic
+{
+    public static void main ( String args[] )
+    {
+        Scanner in = new Scanner ( System.in );
+        System.out.println( "The magic value for your square is 34, which means that every row, column and diagonalof your square must add up to that number. ");
+
+        System.out.println( "Please enter 4 values for row 0, seperated by spaces: ");
+        int r00 = in.nextInt();
+        int r01 = in.nextInt();
+        int r02 = in.nextInt();
+        int r03 = in.nextInt();
+        System.out.println();
+
+        System.out.println( "Please enter 4 values for row 1, seperated by spaces: ");
+        int r10 = in.nextInt();
+        int r11 = in.nextInt();
+        int r12 = in.nextInt();
+        int r13 = in.nextInt();
+        System.out.println();
+
+        System.out.println( "Please enter 4 values for row 2, seperated by spaces: ");
+        int r20 = in.nextInt();
+        int r21 = in.nextInt();
+        int r22 = in.nextInt();
+        int r23 = in.nextInt();
+        System.out.println();
+
+        System.out.println( "Please enter 4 values for row 3, seperated by spaces: ");
+        int r30 = in.nextInt();
+        int r31 = in.nextInt();
+        int r32 = in.nextInt();
+        int r33 = in.nextInt();
+        System.out.println();
+
+        int[][] theSquare = {{ r00, r01, r02, r03},{r10,r11,r12,r13},{r20,r21,r22,r23},{r30,r31,r32,r33}};
+
+        System.out.println("Checking square for problems: ");
+
+        boolean diagonal = checkDiagonal(theSquare);
+        
+        boolean column = checkColumn(theSquare);
+
+        boolean row = checkRow(theSquare);
+
+        boolean range = checkRange(theSquare);
+
+        if ( diagonal == true && column == true && row == true && range == true )
+        {
+            System.out.println("MAGIC: YES");
+        }
+        else
+        {
+            System.out.println("MAGIC: NO");
+        }
+    }
+
+    public static boolean checkDiagonal( int [][] theSquare)
+    {
+        boolean check = true;
+        System.out.println("DIAG: ");
+        int sum0 = 0;
+        int sum1 = 1;
+        for( int rows = 0; rows < theSquare.length; rows++)
+        {
+            for( int column = 0; column < theSquare.length; column++)
+            {
+                sum0 += theSquare[rows][rows];
+                sum1 += theSquare[rows][theSquare.length - rows - 1];
+            }
+        }
+        if (check == true)
+            System.out.println("VALID");
+        return check;
+    }
+
+    public static boolean checkColumn(int [][] theSquare)
+    {
+        System.out.print ("COLS:");
+        boolean check = true;
+        for( int rows = 0; rows < theSquare.length; rows++)
+ {
+            int temp = 0;
+            for( int column = 0; column < theSquare[rows].length; column++)
+            {
+                temp = temp + theSquare[column][rows];
+            }
+            if( temp != 34 )
+            {
+                System.out.println("FLSE");
+            }
+        }
+        if (check == true)
+            System.out.println("VALID");
+        return check;
+    }
+
+    public static boolean checkRow( int [][] theSquare)
+    {
+        System.out.print("ROWS:");
+        boolean check = true;
+        for ( int rows = 0; rows < theSquare.length; rows++)
+        {
+            int temp = 0;
+            for ( int column = 0; column < theSquare[rows].length; column++ )
+            {
+                temp = temp + theSquare[rows][column];
+            }
+            if ( temp != 34)
+            {
+                System.out.println("FALSE");
+                check = false;
+            }
+        }
+        if ( check == true)
+            System.out.println("VALID");
+        return check;
+    }
+
+    public static boolean checkRange(int [][] theSquare)
+    {
+        System.out.println("RANGE:");
+        boolean magic = true;
+        boolean[] checked = new boolean [17];
+        for (int rows = 0; rows < theSquare.length; rows++)
+        {
+            for ( int column = 0; column < theSquare.length; column++)
+            {
+                if ( theSquare[rows][column] < 1 || theSquare[rows][column] > 16 )
+                    System.out.println("RANGE: " + theSquare[rows][column]);
+
+                if ( checked[theSquare[rows][column]] == false)
+                {
+                    checked[theSquare[rows][column]] = true;
+                }
+                else
+                {
+                    magic = false;
+                    System.out.println("RANG: " + theSquare[rows][column]);
+                }
+            }
+        }
+        if ( magic == true)
+            System.out.println("VALID");
+        return magic;
+    }
+}
+  
