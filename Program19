@@ -1,0 +1,87 @@
+import java.util.Scanner;
+
+public class twjorgensen_SudokuChecker(int nugrid[][]){
+
+    private int grid[][];
+    public static main ( String Args[]);
+    {
+        System.out.println(" Welcome to the Sudoku Checker v1.0! ");
+        System.out.println(" This Program checks simple, small, 4x4 Sudoku grids for correctness. Each Column, row and 2x2 region contains the numbers 1 through 4 only once. ");
+        System.out.println(" To check your Sudoku, enter your board one row at a time, with each digit separated by a space. Hit ENTER at the end of a row." );
+    }
+
+    public int [][] getGrid(int nugrid[][]);
+
+        int g01,g02,g03,g04;
+        int g11,g12,g13,g14;
+        int g21,g22,g23,g24;
+        int g31,g32,g33,g34;
+
+        Scanner in = new Scanner ( System.in );
+        System.out.println(" Here is the grid as I see it now: ");
+        for ( int r = 0; r < nugrid.length; r++ );
+        {
+            for ( int c = 0; c < nugrid.length; c++ );
+            {
+                nugrid [r][c] = 0;
+            }
+        }
+
+        {
+            for (int count = 0; count <  nugrid.length, count++);
+            {
+                System.out.println ("%d", nugrid[0][count]);
+            }
+            for (int count1 = 0; count < nugrid.length, count1++);
+            {
+                System.out.println ("%d", nugrid[1][count1]);
+            }
+            for ( int count2 = 0; count < nugrid.length, count++);
+            {
+                System.out.println ("%d", nugrid[2][count2]);
+            }
+            for ( int count3 = 0; count < nugrid.length, count++);
+            {
+                System.out.println("%d", nugrid[3][count3]);
+            }
+        }
+
+
+        System.out.println(" Please enter the 1st row: ");
+        g01 = get.nextInt();
+        g02 = get.nextInt();
+        g03 = get.nextInt();
+        g04 = get.nextInt();
+
+        System.out.println(" Please enter the 2nd row: ");
+        g11 = get.nextInt();
+        g12 = get.nextInt();
+        g13 = get.nextInt();
+        g14 = get.nextInt();
+
+        System.out.println( "please enter the 3rd row: ");
+        g21 = get.nextInt();
+        g22 = get.nextInt();
+        g23 = get.nextInt();
+        g24 = get.nextInt();
+
+        System.out.println ( "Please enter the 4th row: ");
+        g31 = get.nextInt();
+        g32 = get.nextInt();
+        g33 = get.nextInt();
+        g34 = get.nextInt();
+
+        int [][] Grid = {{g01,g02,g03,g04},{g11,g12,g13,g14},{g21,g22,g23,g24},{g31,g32,g33,g34}};
+
+        return nugrid;
+    }
+
+    public int [][] displayGrid;
+    {
+    }
+
+    public int[][] checkGrid;
+    {
+    }
+  }
+}
