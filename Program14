@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class twjorgensen_Perfect
+{
+    public static void main ( String args[] )
+    {
+        Scanner in = new Scanner ( System.in );
+        System.out.print("How many numbers would you like to test? ");
+        int amount = in.nextInt();
+        if (amount < 0 )
+        {
+            System.out.print("How many numbers would you like to test? ");
+            amount = in.nextInt();
+        }
+        for ( int count = 0; count < amount; count++)
+        {
+        System.out.print("Please enter a possible perfect number: ");
+        int num = in.nextInt();
+        testPerfect(num);
+        if (testPerfect(num))
+            printFactors(num);
+        else
+            System.out.printf(" %d : NOT PERFECT\n", num);
+        }
+
+    }
+    public static boolean testPerfect(int num)
+    {
+        boolean test = true;
+        int total = 0;
+        for ( int x = 0; x<num; x++)
+        {
+            for ( int y = 1; y < x; y++)
+            {
+                if ( x % y == 0 )
+                    total += y;
+            }
+        }
+        if (total != num)
+            test = false;
+        return test;
+
+    }
+    public static void printFactors(int num)
+    {
+        for (int factor = num - 1; factor >= 1; factor-- )
+        {
+            if ( num % factor == 0)
+                System.out.printf("%d  \n", factor);
+        }
+    }
+}
