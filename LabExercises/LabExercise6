@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class labExercise6
+{
+    public static void main( String[] args )
+    {
+        double pi = 3.0; // Calculated Pi, Starting at 3.0
+        double d  = 2.0; // d is required for formula
+
+        // Hard-coded actual Pi, for comparison
+        double actualPi = 3.14159265358979323846;
+
+        // Percent error between the calculated Pi and actual Pi
+        double pError;
+
+        int iterations; // Number of times the loop will run
+
+        Scanner in = new Scanner( System.in );
+
+        // Prompting the user for iterations
+        do
+        {
+            System.out.print( "How many iterations would you like to calculate? " );
+            iterations = in.nextInt();
+        } while ( iterations < 0 );
+
+
+
+
+        /* This is a counter-controlled loop that will run exactly "iterations"
+         * number of times, meaning the user chooses how many times this loop will
+         * run. For example, if the user enters 100, this loop will run 100 times.
+         *
+         * Fill in the for loop so that it will follow this.
+         */
+        for ( )
+        {
+            pi += 4 / ( d * (d+1) * (d+2) );
+
+            pi -= 4 / ( (d+2) * (d+3) * (d+4) );
+
+            d += 4;
+        }
+
+
+
+        // Calculation for percent error
+        pError = ( pi - actualPi ) / actualPi * 100;
+        // Absolute Value pError
+        if ( pError < 0 ) pError *= -1;
+
+        // RESULT
+        System.out.print(  "Calculated Pi: " + pi + "\n" +
+                           "Actual Pi:     " + actualPi + "\n" +
+                           "Percent Error: " + pError + "%\n" );
+    }
+}
+    
