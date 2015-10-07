@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class labExercise4
+{
+    public static void main( String[] args )
+    {
+        char cInput;
+
+        Scanner in = new Scanner( System.in );
+
+        System.out.print( "Please enter a letter to determine if it is a vowel: " );
+        cInput = in.next().charAt(0);
+
+        System.out.printf( "%c is a ", cInput );
+
+        // Fill in the switch variable
+        switch ( cInput  )
+        {
+            case 'A' : case 'a':
+
+                System.out.println( "vowel" );
+                break;
+            case 'E' : case 'e':
+                System.out.println( "vowel" );
+                break;
+            case 'I' : case 'i':
+                System.out.println( "vowel" );
+                break;
+            case 'O' : case 'o':
+                System.out.println( "vowel" );
+                break;
+            case 'U' : case 'u':
+                System.out.println( "vowel" );
+                break;
+            default:
+                System.out.println( "consonant" );
+        }
+    }
+}
