@@ -1,0 +1,43 @@
+import java.util.Random;
+public class twjorgensen_Birthdays
+{
+    public static void main ( String args[] )
+    {
+        int Birthday[] = new int[365];
+        int sum = 0;
+        int max = 0;
+        int min = 999999;
+        int randomValue = 0;
+        Random randomNumbers = new Random();
+        for (int z = 0; z < 18975; z++)
+        {
+           randomValue = randomNumbers.nextInt( 365 );
+            Birthday[randomValue]++;
+        }
+
+        for( int x = 0; x < Birthday.length; x++)
+        {
+            System.out.printf("Day %d : %d people\n", x+1, Birthday[x]);
+        }
+        for (int y = 0; y < Birthday.length; y++   )
+        {
+            if ( Birthday[y] >= max )
+                max = Birthday[y];
+            if ( Birthday[y] <= min )
+                min = Birthday[y];
+
+        }
+        System.out.printf("The following days have %d people:\n", max);
+        for ( int amount = 0; amount < Birthday.length; amount++)
+        {
+            if ( Birthday[amount] == max )
+                System.out.print((amount + 1) + " \n");
+        }
+        System.out.printf("The following days have %d people:\n", min);
+        for ( int amount = 0; amount < Birthday.length; amount++)
+        {
+           if ( Birthday[amount] == min)
+              System.out.print((amount + 1) + " \n");
+        }
+    }
+}
