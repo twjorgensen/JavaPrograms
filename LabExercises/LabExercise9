@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class labExercise9
+{
+    public static void main ( String[] args )
+    {
+        Scanner in = new Scanner (System.in);
+
+        //create an array of ten elements to store the grades here
+        double[] grades = new double[10];
+
+        double sum = 0.0;
+        double average = 0.0;
+        double max = 0.0;
+        double min = 0.0;
+
+        System.out.println ("Welcome to the PKI Grading Program!");
+
+        for (int x = 0; x < grades.length; x++ ) // insert parts of for loop here
+        {
+            System.out.print ("Please enter a grade: ");
+            grades[x] = in.nextDouble();
+        }
+
+        max = grades[0];
+        min = grades[0];
+        sum = grades[0];
+
+        for (int y = 0; y < grades.length; y++   ) // insert parts of for loop here
+        {
+            if ( grades[y] > max )
+                max = grades[y];
+            if ( grades[y] < min )
+                min = grades[y];
+            sum += grades[y];
+
+            //insert code to calculate max, min, and sum here
+        }
+
+        average = sum / 10;
+
+        System.out.printf ("The average of those grades is %.1f\n", average);
+        System.out.printf ("The highest grade was %.1f\n", max);
+        System.out.printf ("The lowest grade was %.1f\n", min);
+
+    }
+}
