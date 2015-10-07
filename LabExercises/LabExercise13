@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class labExercise13
+{
+    public static void main ( String Args[] )
+    {
+        Scanner in = new Scanner( System.in );
+        System.out.println("Stopwatch Started");
+        Stopwatch s = new Stopwatch();
+
+        System.out.print("Enter q to quit, any other to check: ");
+        char x = in.next().charAt(0);
+        s.start();
+        while ( x != 'q' )
+        {
+            System.out.print("Enter q to quit, any other to check: ");
+            x = in.next().charAt(0);
+            s.stop();
+            s.printTime();
+        }
+
+    }
+}
